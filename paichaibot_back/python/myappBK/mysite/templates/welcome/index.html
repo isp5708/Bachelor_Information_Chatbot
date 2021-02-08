@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>chat room</title>
+    </head>
+
+    <body>
+        사용자 이름을 입력해 주세요<br>
+        <input id="room-name-input" type='text' size="100">
+        <input id="room-name-submit" type='button' value="Enter">
+
+        <script>
+            document.querySelector("#room-name-input").focus();
+            document.querySelector("#room-name-input").onkeyup = function(e) {
+                if(e.keyCode === 13) {
+                    document.querySelector('#room-name-submit').click();
+                }
+            };
+
+            document.querySelector('#room-name-submit').onclick = function(e) {
+                var userName = document.querySelector('#room-name-input').value;
+                var roomName = 'chatbotTest'
+                window.location.pathname = '/mysite/' + roomName + '/' + userName + '/';
+            };
+        </script>
+    </body>
+</html>
